@@ -12,20 +12,21 @@ public abstract class AbstractTemplate<T> {
     }
 
     public T execute(String message) {
-
         TraceStatus status = null;
         try {
             status = trace.begin(message);
-            //로직 호출
+
+            // 로직 호출
             T result = call();
 
             trace.end(status);
             return result;
+
         } catch (Exception e) {
-            trace.exception(status, e);
+            trace.exception(status,e);
             throw e;
         }
     }
 
-    protected abstract T call();
+    protected abstract T call(); // 변하는 부분을 처리하는 메서드
 }
