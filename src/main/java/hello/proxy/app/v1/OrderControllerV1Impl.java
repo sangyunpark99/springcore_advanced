@@ -1,6 +1,5 @@
 package hello.proxy.app.v1;
 
-import hello.advanced.app.v1.OrderServiceV1;
 
 public class OrderControllerV1Impl implements OrderControllerV1{
 
